@@ -1,0 +1,78 @@
+spring:
+  application:
+    name: oauth2_client
+  session:
+    store-type: none #配置这个来禁用session异常
+
+##测试环境https
+#security:
+#  oauth2:
+#    client:
+#      clientId: SampleClientId
+#      clientSecret: secret
+#      accessTokenUri: https://testauth.makeys.info/auth/oauth/token
+#      userAuthorizationUri: https://testauth.makeys.info/auth/oauth/authorize
+#    resource:
+#      userInfoUri: https://testauth.makeys.info/auth/user/me
+
+#测试环境http
+security:
+  oauth2:
+    client:
+      clientId: SampleClientId
+      clientSecret: secret
+      accessTokenUri: https://auth.makeys.info/auth/oauth/token
+      #accessTokenUri: http://192.168.2.56:8080/auth/oauth/token
+      userAuthorizationUri: https://auth.makeys.info/auth/oauth/authorize
+      #userAuthorizationUri: http://192.168.2.56:8080/auth/oauth/authorize
+      redirectURI: http://localhost:1116/server/callbackCode
+      scope: user_info
+    resource:
+      userInfoUri: https://auth.makeys.info/auth/user/me
+      #userInfoUri: http://192.168.2.56:8080/auth/user/me
+
+##本地环境
+#security:
+#  oauth2:
+#    client:
+#      clientId: SampleClientId
+#      clientSecret: secret
+#      accessTokenUri: http://localhost:8080/auth/oauth/token
+#      userAuthorizationUri: http://localhost:8080/auth/oauth/authorize
+#    resource:
+#      userInfoUri: http://localhost:8080/auth/user/me
+
+
+##110
+#security:
+#  oauth2:
+#    client:
+#      clientId: SampleClientId
+#      clientSecret: secret
+#      accessTokenUri: http://192.168.2.110:8080/auth/oauth/token
+#      userAuthorizationUri: http://192.168.2.110:8080/auth/oauth/authorize
+#    resource:
+#      userInfoUri: http://192.168.2.110:8080/auth/user/me
+
+##110-test
+#security:
+#  oauth2:
+#    client:
+#      clientId: SampleClientId
+#      clientSecret: secret
+#      accessTokenUri: http://test-authclient.makeys.info/auth/oauth/token
+#      userAuthorizationUri: http://test-authclient.makeys.info/auth/oauth/authorize
+#    resource:
+#      userInfoUri: http://test-authclient.makeys.info/auth/user/me
+
+server:
+  port: 1116
+tomcatAjpPort: 7114
+
+
+logging:
+  level:
+    #org.springframework.security: DEBUG
+    root: info
+    org.springframework.data.redis.core.RedisConnectionUtils: error
+    sun.rmi: error

@@ -1,0 +1,13 @@
+.icon path{
+  fill: #06DFAD;
+}
+
+.btn{
+  background: #06DFAD;
+  box-shadow: 0 2px 8px 0 rgba(7,224,174,0.20);
+  color: #FFFFFF;
+}
+.sms-code{
+  border-color: #06DFAD;
+  color: #06DFAD;
+}
